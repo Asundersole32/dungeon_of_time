@@ -1,0 +1,27 @@
+[gd_scene load_steps=3 format=3 uid="uid://v4ugcoxu8hwn"]
+
+[ext_resource type="Texture2D" uid="uid://slamrxlonuew" path="res://assets/room/room_asset.png" id="1_kr6fr"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tx22r"]
+size = Vector2(464, 306)
+
+[node name="room" type="Area2D"]
+collision_mask = 238
+
+[node name="room_sprite" type="Sprite2D" parent="."]
+texture = ExtResource("1_kr6fr")
+
+[node name="room_collider" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_tx22r")
+
+[node name="lower_door_spawn" type="Marker2D" parent="."]
+position = Vector2(0, 101)
+
+[node name="left_door_spawn" type="Marker2D" parent="."]
+position = Vector2(-179, 0)
+
+[node name="right_door_spawn" type="Marker2D" parent="."]
+position = Vector2(181, 0)
+
+[node name="upper_door_spawn" type="Marker2D" parent="."]
+position = Vector2(0, -100)
