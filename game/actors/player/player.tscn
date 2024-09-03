@@ -1,5 +1,6 @@
-[gd_scene load_steps=40 format=3 uid="uid://d4cc0q18p6s7n"]
+[gd_scene load_steps=41 format=3 uid="uid://d4cc0q18p6s7n"]
 
+[ext_resource type="Script" path="res://scripts/actors_scripts/player.gd" id="1_i61pq"]
 [ext_resource type="Texture2D" uid="uid://cdbdl3tc5tgyc" path="res://assets/player/Player.png" id="1_o4rb1"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_juyp3"]
@@ -293,6 +294,7 @@ animations = [{
 
 [node name="player" type="CharacterBody2D"]
 collision_layer = 2
+script = ExtResource("1_i61pq")
 
 [node name="player_collisor" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_juyp3")
