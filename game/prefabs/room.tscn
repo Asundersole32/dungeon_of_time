@@ -1,43 +1,61 @@
-[gd_scene load_steps=4 format=3 uid="uid://v4ugcoxu8hwn"]
+[gd_scene load_steps=5 format=3 uid="uid://v4ugcoxu8hwn"]
 
 [ext_resource type="Texture2D" uid="uid://slamrxlonuew" path="res://assets/room/room_asset.png" id="1_kr6fr"]
+[ext_resource type="Script" path="res://scripts/prefabs_scripts/room.gd" id="1_tqlnl"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_tx22r"]
-size = Vector2(52, 305.875)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kt8bh"]
+size = Vector2(50.25, 305.5)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_532br"]
-size = Vector2(359.5, 52.5)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s1trv"]
+size = Vector2(364, 54)
 
-[node name="room" type="Area2D"]
+[node name="room" type="CharacterBody2D"]
 collision_mask = 238
+script = ExtResource("1_tqlnl")
 
-[node name="room_sprite" type="Sprite2D" parent="."]
+[node name="sprite" type="Sprite2D" parent="."]
 texture = ExtResource("1_kr6fr")
 
-[node name="room_collider_left" type="CollisionShape2D" parent="."]
-position = Vector2(-206, -0.125)
-shape = SubResource("RectangleShape2D_tx22r")
+[node name="right_wall_collider" type="CollisionShape2D" parent="."]
+position = Vector2(207, 0)
+shape = SubResource("RectangleShape2D_kt8bh")
 
-[node name="room_collider_right" type="CollisionShape2D" parent="."]
-position = Vector2(206, 0.0625)
-shape = SubResource("RectangleShape2D_tx22r")
+[node name="left_wall_collider" type="CollisionShape2D" parent="."]
+position = Vector2(-207.125, 0)
+shape = SubResource("RectangleShape2D_kt8bh")
 
-[node name="room_collider_up" type="CollisionShape2D" parent="."]
-position = Vector2(0.25, -126.5)
-shape = SubResource("RectangleShape2D_532br")
+[node name="lower_wall_collider" type="CollisionShape2D" parent="."]
+position = Vector2(0, 126)
+shape = SubResource("RectangleShape2D_s1trv")
 
-[node name="room_collider_down" type="CollisionShape2D" parent="."]
-position = Vector2(0, 126.75)
-shape = SubResource("RectangleShape2D_532br")
-
-[node name="lower_door_spawn" type="Marker2D" parent="."]
-position = Vector2(0, 101)
-
-[node name="left_door_spawn" type="Marker2D" parent="."]
-position = Vector2(-179, 0)
+[node name="upper_wall_collider" type="CollisionShape2D" parent="."]
+position = Vector2(0, -126)
+shape = SubResource("RectangleShape2D_s1trv")
 
 [node name="right_door_spawn" type="Marker2D" parent="."]
-position = Vector2(181, 0)
+position = Vector2(196, 0)
+
+[node name="left_door_spawn" type="Marker2D" parent="."]
+position = Vector2(-199, 0)
 
 [node name="upper_door_spawn" type="Marker2D" parent="."]
-position = Vector2(0, -100)
+position = Vector2(0, -115)
+
+[node name="lower_door_spawn" type="Marker2D" parent="."]
+position = Vector2(0, 116)
+
+[node name="lower_door_detector" type="RayCast2D" parent="."]
+position = Vector2(0, 153)
+target_position = Vector2(0, 100)
+
+[node name="upper_door_detector" type="RayCast2D" parent="."]
+position = Vector2(0, -153)
+target_position = Vector2(0, -100)
+
+[node name="left_door_detector" type="RayCast2D" parent="."]
+position = Vector2(-232, 0)
+target_position = Vector2(-100, 0)
+
+[node name="right_door_detector" type="RayCast2D" parent="."]
+position = Vector2(232, 0)
+target_position = Vector2(100, 0)

@@ -4,10 +4,10 @@
 [ext_resource type="PackedScene" uid="uid://d4cc0q18p6s7n" path="res://actors/player/player.tscn" id="2_fj1n7"]
 
 [node name="test_room" type="Node2D"]
-position = Vector2(352, 235)
+position = Vector2(603, 291)
 
 [node name="room" parent="." instance=ExtResource("1_actdc")]
-position = Vector2(0, 1)
+position = Vector2(0, 2)
 
 [node name="player" parent="." instance=ExtResource("2_fj1n7")]
 position = Vector2(-1, 1)
