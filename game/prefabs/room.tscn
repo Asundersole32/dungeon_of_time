@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://v4ugcoxu8hwn"]
+[gd_scene load_steps=6 format=3 uid="uid://v4ugcoxu8hwn"]
 
 [ext_resource type="Texture2D" uid="uid://slamrxlonuew" path="res://assets/room/room_asset.png" id="1_kr6fr"]
 [ext_resource type="Script" path="res://scripts/prefabs_scripts/room.gd" id="1_tqlnl"]
@@ -8,6 +8,9 @@ size = Vector2(50.25, 305.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s1trv"]
 size = Vector2(364, 54)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w43at"]
+size = Vector2(364, 198)
 
 [node name="room" type="CharacterBody2D"]
 collision_mask = 238
@@ -59,3 +62,11 @@ target_position = Vector2(-100, 0)
 [node name="right_door_detector" type="RayCast2D" parent="."]
 position = Vector2(232, 0)
 target_position = Vector2(100, 0)
+
+[node name="insider_room_area" type="Area2D" parent="."]
+collision_mask = 2
+
+[node name="insider_room_collider" type="CollisionShape2D" parent="insider_room_area"]
+shape = SubResource("RectangleShape2D_w43at")
+
+[connection signal="body_entered" from="insider_room_area" to="." method="_on_insider_room_area_body_entered"]
