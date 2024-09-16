@@ -1,15 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://cjng5xsc0ymcu"]
+[gd_scene load_steps=2 format=3 uid="uid://cjng5xsc0ymcu"]
 
-[ext_resource type="PackedScene" uid="uid://v4ugcoxu8hwn" path="res://prefabs/room.tscn" id="1_actdc"]
 [ext_resource type="Script" path="res://scripts/level_scripts/dungeon.gd" id="1_ovmob"]
-[ext_resource type="PackedScene" uid="uid://d4cc0q18p6s7n" path="res://actors/player/player.tscn" id="2_fj1n7"]
 
 [node name="test_room" type="Node2D"]
-position = Vector2(603, 291)
 script = ExtResource("1_ovmob")
 
-[node name="room" parent="." instance=ExtResource("1_actdc")]
-position = Vector2(0, 2)
-
-[node name="player" parent="." instance=ExtResource("2_fj1n7")]
-position = Vector2(-1, 1)
+[node name="dungeon_spawn" type="Marker2D" parent="."]
+position = Vector2(583, 270)

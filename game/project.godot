@@ -17,6 +17,7 @@ config/icon="res://icon.svg"
 [autoload]
 
 Globals="*res://singletons/globals.gd"
+GameMenager="*res://singletons/gameMenager.gd"
 
 [global_group]
 
