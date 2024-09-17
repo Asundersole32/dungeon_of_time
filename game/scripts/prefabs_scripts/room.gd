@@ -20,6 +20,7 @@ var door_instances := []
 
 func _ready() -> void:
 	pass
+	#room_doors_instances()
 	
 func _process(delta: float) -> void:
 	pass
@@ -40,28 +41,28 @@ func room_doors_instances():
 	if up == 1 or entered_door == 1:
 		var created_door = room_door_creator()
 		direction = "up"
-		created_door.position = upper_door_spawn.position
+		created_door.position = upper_door_spawn.global_position
 		created_door.call_deferred("direction_setter", direction)
 		door_instances.append(created_door)
 		
 	if right == 1 or entered_door == 2:
 		var created_door = room_door_creator()
 		direction = "right"
-		created_door.position = right_door_spawn.position
+		created_door.position = right_door_spawn.global_position
 		created_door.call_deferred("direction_setter", direction)
 		door_instances.append(created_door)
 		
 	if left == 1 or entered_door == 3:
 		var created_door = room_door_creator()
 		direction = "left"
-		created_door.position = left_door_spawn.position
+		created_door.position = left_door_spawn.global_position
 		created_door.call_deferred("direction_setter", direction)
 		door_instances.append(created_door)
 		
 	if down == 1 or entered_door == 4:
 		var created_door = room_door_creator()
 		direction = "down"
-		created_door.position = lower_door_spawn.position
+		created_door.position = lower_door_spawn.global_position
 		created_door.call_deferred("direction_setter", direction)
 		door_instances.append(created_door)
 

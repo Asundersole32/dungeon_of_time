@@ -1,6 +1,6 @@
-[gd_scene load_steps=6 format=3 uid="uid://v4ugcoxu8hwn"]
+[gd_scene load_steps=10 format=3 uid="uid://v4ugcoxu8hwn"]
 
-[ext_resource type="Texture2D" uid="uid://slamrxlonuew" path="res://assets/room/room_asset.png" id="1_kr6fr"]
+[ext_resource type="Texture2D" uid="uid://botf8kui4nucn" path="res://assets/room/room_asset.png" id="1_kr6fr"]
 [ext_resource type="Script" path="res://scripts/prefabs_scripts/room.gd" id="1_tqlnl"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kt8bh"]
@@ -11,6 +11,14 @@ size = Vector2(364, 54)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_w43at"]
 size = Vector2(364, 198)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ukrvk"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5jyvy"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fl50e"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_e0qo1"]
 
 [node name="room" type="CharacterBody2D"]
 collision_mask = 238
@@ -47,26 +55,42 @@ position = Vector2(0, -115)
 [node name="lower_door_spawn" type="Marker2D" parent="."]
 position = Vector2(0, 116)
 
-[node name="lower_door_detector" type="RayCast2D" parent="."]
-position = Vector2(0, 153)
-target_position = Vector2(0, 100)
-
-[node name="upper_door_detector" type="RayCast2D" parent="."]
-position = Vector2(0, -153)
-target_position = Vector2(0, -100)
-
-[node name="left_door_detector" type="RayCast2D" parent="."]
-position = Vector2(-232, 0)
-target_position = Vector2(-100, 0)
-
-[node name="right_door_detector" type="RayCast2D" parent="."]
-position = Vector2(232, 0)
-target_position = Vector2(100, 0)
-
 [node name="insider_room_area" type="Area2D" parent="."]
 collision_mask = 2
 
 [node name="insider_room_collider" type="CollisionShape2D" parent="insider_room_area"]
 shape = SubResource("RectangleShape2D_w43at")
+
+[node name="right_room_area" type="Area2D" parent="."]
+position = Vector2(464, 0)
+collision_layer = 256
+collision_mask = 512
+
+[node name="area_collisor" type="CollisionShape2D" parent="right_room_area"]
+shape = SubResource("RectangleShape2D_ukrvk")
+
+[node name="left_room_area" type="Area2D" parent="."]
+position = Vector2(-464, -1)
+collision_layer = 256
+collision_mask = 512
+
+[node name="area_collisor" type="CollisionShape2D" parent="left_room_area"]
+shape = SubResource("RectangleShape2D_5jyvy")
+
+[node name="lower_room_area" type="Area2D" parent="."]
+position = Vector2(-1, 306)
+collision_layer = 256
+collision_mask = 512
+
+[node name="area_collisor" type="CollisionShape2D" parent="lower_room_area"]
+shape = SubResource("RectangleShape2D_fl50e")
+
+[node name="upper_room_area" type="Area2D" parent="."]
+position = Vector2(0, -306)
+collision_layer = 256
+collision_mask = 512
+
+[node name="area_collisor" type="CollisionShape2D" parent="upper_room_area"]
+shape = SubResource("RectangleShape2D_e0qo1")
 
 [connection signal="body_entered" from="insider_room_area" to="." method="_on_insider_room_area_body_entered"]

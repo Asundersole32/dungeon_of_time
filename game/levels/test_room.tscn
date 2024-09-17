@@ -6,4 +6,4 @@
 script = ExtResource("1_ovmob")
 
 [node name="dungeon_spawn" type="Marker2D" parent="."]
-position = Vector2(583, 270)
+position = Vector2(599, 294)

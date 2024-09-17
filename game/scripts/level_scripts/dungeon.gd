@@ -6,6 +6,7 @@ var dungeon_player
 @onready var dungeon_spawn := $dungeon_spawn as Marker2D
 
 func _ready() -> void:
+	pass
 	spawn_room()
 	spawn_player()
 	

@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://dlfjn02xekh68"]
 
 [ext_resource type="Script" path="res://scripts/prefabs_scripts/door.gd" id="1_6l8cy"]
-[ext_resource type="Texture2D" uid="uid://dyvppfcwvtg8e" path="res://assets/room/door_upper.png" id="1_nkcrn"]
+[ext_resource type="Texture2D" uid="uid://bbmmx3hmeqv54" path="res://assets/room/door_upper.png" id="1_nkcrn"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wicuy"]
 size = Vector2(20, 5)
@@ -21,8 +21,8 @@ position = Vector2(0, 18.5)
 shape = SubResource("RectangleShape2D_wicuy")
 
 [node name="door_detector" type="RayCast2D" parent="."]
-target_position = Vector2(0, -100)
-collision_mask = 64
+target_position = Vector2(0, -265)
+collision_mask = 512
 hit_from_inside = true
 collide_with_areas = true
 collide_with_bodies = false

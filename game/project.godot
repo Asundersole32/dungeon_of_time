@@ -33,6 +33,8 @@ Door="Door_group"
 2d_physics/layer_6="itens"
 2d_physics/layer_7="doors"
 2d_physics/layer_8="room_obstacles"
+2d_physics/layer_9="test_1"
+2d_physics/layer_10="test_2"
 
 [rendering]
 
